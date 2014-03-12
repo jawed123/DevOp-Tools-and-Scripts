@@ -1,14 +1,6 @@
 #### Distributed key-value store: etcd, and confd installation
 =======
 
-Pre-requisite:
-1) Instances will be launched from ami 
-2) AMI will have following components installed
-	*go 1.2.1
-	* etcd
-	* nodejs
-	*  docker
-
 ### Install go >1.2.1 
 https://github.com/moovweb/gvm
 

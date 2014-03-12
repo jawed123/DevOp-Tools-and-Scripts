@@ -59,7 +59,7 @@ keys = [
 # This a comment
 [myconfig]
 database_url = {{ .runnable_redis_url }}
-database_user = {{ .runnable_redis_port }}
+database_port = {{ .runnable_redis_port }}
 
 ```
 
@@ -85,7 +85,7 @@ open /tmp/redis_db.conf to see the updated file
 ```
 [redis]
 database_url = 54.219.217.19
-database_user = 6378
+database_port = 6378
 ```
 
 

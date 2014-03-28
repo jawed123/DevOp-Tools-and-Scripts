@@ -1,6 +1,4 @@
-
-<!-- saved from url=(0105)https://gist.githubusercontent.com/oodavid/2206527/raw/4e2248989d1050892e06ec6fb0a8a05b808a2eb7/README.md -->
-<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body style=""><pre style="word-wrap: break-word; white-space: pre-wrap;"># Backup MySQL to Amazon S3
+# Backup MySQL to Amazon S3
 
 This is a simple way to backup your MySQL tables to Amazon S3 for a nightly backup - this is all to be done on your server :-)
 

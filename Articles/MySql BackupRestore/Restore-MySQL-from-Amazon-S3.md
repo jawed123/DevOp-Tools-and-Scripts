@@ -1,6 +1,4 @@
-
-<!-- saved from url=(0105)https://gist.githubusercontent.com/oodavid/2209819/raw/19e1cad365e6ea5320c20a1c713c8c0b6c70824d/README.md -->
-<html><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body style=""><pre style="word-wrap: break-word; white-space: pre-wrap;"># Restore MySQL from Amazon S3
+# Restore MySQL from Amazon S3
 
 This is a hands-on way to pull down a set of MySQL dumps from Amazon S3 and restore your database with it
 
@@ -30,4 +28,4 @@ This is a hands-on way to pull down a set of MySQL dumps from Amazon S3 and rest
 ## 3 - Check it all went smoothly
 
     # Login to MySQL and have a poke
-    mysql -u root -p$mysqlpass</pre><div id="window-resizer-tooltip"><a href="https://gist.githubusercontent.com/oodavid/2209819/raw/19e1cad365e6ea5320c20a1c713c8c0b6c70824d/README.md#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
+    mysql -u root -p$mysqlpass

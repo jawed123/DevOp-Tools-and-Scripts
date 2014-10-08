@@ -1,3 +1,4 @@
+```
 # Pull repository from private github repos
 
 ### Create .ssh dir in home directory
@@ -8,3 +9,4 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
  
 # Pull project
 RUN git clone git@github.com:Private/githubRepo.git /home/githubRepo
+```

@@ -1,20 +1,28 @@
 Install elasticsearhc
------
+-----------------------
 
 Download debian package and install it
 
 link: https://www.elastic.co/downloads/elasticsearch
 
-wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.5/elasticsearch-2.3.5.deb
-dpkg -i elasticsearch-2.3.5.deb
+
+    wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.5/elasticsearch-2.3.5.deb
+    dpkg -i elasticsearch-2.3.5.deb
+    sudo service elasitcsearch restart
 
 
 
 Install Kibana
-----
+-----------------
 
+link: https://www.elastic.co/downloads/kibana
 
+    wget https://download.elastic.co/kibana/kibana/kibana_4.5.4_amd64.deb
+    dpkg -i kibana_4.5.4_amd64.deb
+    sudo service kibana restart
+    
 
+-------
 
 Instruction to restore elasticsearch snapshot to another cluster
 -------

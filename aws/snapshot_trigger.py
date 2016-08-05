@@ -10,9 +10,6 @@ client =  session.client(service_name='elasticache', region_name="ap-southeast-1
 
 clusters = [ 'redis-benchmark-001' ]
 
-
-#sys.exit()
-print client
 timestamp = datetime.datetime.now().strftime('%Y%m%d-%H%M%S')
 h_timestamp = datetime.datetime.now()
 print "XXXXXXXXX Starting snapshot @%s" % h_timestamp

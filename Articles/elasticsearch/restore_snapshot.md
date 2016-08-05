@@ -1,4 +1,4 @@
-Install elasticsearhc
+Install elasticsearch
 -----------------------
 
 Download debian package and install it

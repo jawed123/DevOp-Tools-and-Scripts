@@ -1,0 +1,69 @@
+Instruction to restore elasticsearch snapshot to another cluster
+-------
+
+
+## Restore snapshot to another cluster
+
+### Create registery
+
+Add file system registry
+
+    mkdir -p /mount/backups
+
+edit __/etc/elasticsearch/elasticsearch.yml__ file
+
+    #Add backup directory
+    path.repo: ["/mount/backups"]
+
+Restart elasticsearch
+
+    sudo service elasticsearch restart
+  
+Now create Registry
+
+    curl -XPUT 'http://localhost:9200/_snapshot/my_backup' -d '{
+        "type": "fs",
+        "settings": {
+            "location": "/mount/backups/my_backup",
+            "compress": true
+        }
+    }'
+
+
+### Copy backups to `/mount/backups/my_backup` folder
+
+    cp <your backup> /mount/backups/my_backup
+
+```
+    .backups
+    └── my_backup
+        ├── indices
+        │   ├── logstash-2016.03.17
+        │   │   ├── 0 [97 entries exceeds filelimit, not opening dir]
+        │   │   ├── 1 [109 entries exceeds filelimit, not opening dir]
+        │   │   ├── 2 [103 entries exceeds filelimit, not opening dir]
+        │   │   ├── 3 [111 entries exceeds filelimit, not opening dir]
+        │   │   ├── 4 [117 entries exceeds filelimit, not opening dir]
+        │   │   └── snapshot-logstash-2016.03.17
+        │   └── snapshot-logstash-2016.03.17
+        ├── metadata-logstash-2016.03.17
+        └── snapshot-logstash-2016.03.17
+```
+
+### Restore now
+
+    curl  -XPOST 'http://localhost:9200/_snapshot/my_backup/logstash-2016.03.17/_restore'
+
+### Checking progress
+
+    curl  -XGET http://localhost:9200/logstash-2016.03.17/_recovery?pretty | grep "%"
+
+  All should be 100%
+
+
+
+References
+-----
+
+- https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html
+- https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html

@@ -4,7 +4,7 @@ Smart way of login to aws(,or other cloud) instances
 About
 ---
 
-Gist is if you know instance name or id you should not need to know its ip to login from your jump host or form local shell
+Gist is if you know instance name or id you should not need to know its ip to login from your jump host or from local shell
 This is what this simple bash function try to achieve
 
 Create IAM role with RO access on autoscaling groups and ec2 instances and assign it to the instance. If user is created then do configure `~/.aws/` with the same.

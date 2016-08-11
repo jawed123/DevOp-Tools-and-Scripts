@@ -1,0 +1,33 @@
+# Description:
+#
+# Logrotate logs daily, push all .gz files to s3 and then to local archive folder.
+# local archive folder is then cleaned for files older than 90 days
+#
+/etc/logrotate.d/my_awesome_app/log/main/@*.s {
+  compress
+  daily
+  dateext
+  dateformat -%Y%m%d-%s
+  mail devops@example.com
+  missingok
+  notifempty
+  rotate 1
+  sharedscripts
+  su root root
+  postrotate
+    [ -d /usr/share/app/logs/archive ] || \
+    /bin/mkdir -p /usr/share/app/logs/archive;
+    files=$(/bin/ls  /etc/app/*/log/main/*.gz 2> /dev/null | /usr/bin/wc -l) ;
+    if [ "$files" != "0" ];
+    then 
+         /usr/local/bin/s3cmd put /etc/app/*/log/main/*.gz  \
+              s3://my-applogs-backup/logs/  ;
+        #lets move logs to archive directory now
+        /bin/mv /etc/app/*/log/main/*.gz /usr/share/app/logs/archive ;
+    fi ;
+    /usr/bin/logger "Logrotate Ran for my awesome app" ;
+    # lets delete 90 days old logs
+    /usr/bin/find /usr/share/app/logs/archive/ -mtime +90 -exec /bin/rm {} \;
+    
+  endscript
+}

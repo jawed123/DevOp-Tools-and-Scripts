@@ -96,6 +96,15 @@ Now create Registry
   All should be 100%
 
 
+------
+
+One shot script
+------
+
+Above steps are automatically executed for you by following little friendly project. Do give it a try.
+
+- https://github.com/sahilsk/elk-snapshot-restore
+
 
 References
 -----
